@@ -3,7 +3,7 @@
 
 ## Refleksi Hello Minikube
 
-1.  Setelah aplikasi diexpose sebagai service dan diakses beberapa kali, log aplikasi menunjukkan peningkatan jumlah log. Setiap kali aplikasi dibuka atau diakses melalui service, server HTTP akan mencatat request GET yang masuk. Hal ini terlihat jelas pada log di mana setiap akses ke endpoint `/` akan menghasilkan baris log baru. Dengan demikian, semakin sering aplikasi diakses, semakin banyak pula log yang tercatat, yang menandakan bahwa service berhasil meneruskan request ke Pod aplikasi.
+1.  Setelah aplikasi diexpose sebagai service dan diakses beberapa kali, log aplikasi menunjukkan peningkatan jumlah log yang signifikan. Setiap kali aplikasi dibuka atau diakses melalui service, server HTTP akan mencatat request GET yang masuk ke dalam log sistem. Hal ini terlihat jelas pada log di mana setiap akses ke endpoint `/` akan menghasilkan baris log baru yang mencatat detail request tersebut. Service yang telah diexpose berperan sebagai gateway yang meneruskan traffic dari luar cluster ke Pod aplikasi yang berjalan di dalam cluster Kubernetes. Dengan demikian, semakin sering aplikasi diakses, semakin banyak pula log yang tercatat, yang menandakan bahwa service berhasil meneruskan request ke Pod aplikasi dan aplikasi berrespons dengan normal. Peningkatan aktivitas log ini juga menunjukkan bahwa mekanisme load balancing dan routing di Kubernetes berfungsi dengan baik dalam mengarahkan request ke Pod yang tepat.
 
 #### Before Expose
 ![Before Expose](./kubelogsbefore.png)
